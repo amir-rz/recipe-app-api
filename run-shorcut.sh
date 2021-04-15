@@ -1,5 +1,5 @@
 if [[ "$1" == "test" ]]; then
-    docker-compose run app sh -c "python3 manage.py test && flake8"
+    docker-compose run app sh -c "python3 manage.py test && flake8 --ignore=W391"
 # elif [[ "$1" == "runserver"]]; then
 #     docker-compose run app sh -c "python3 manage.py runserver"
 # elif [[ "$1" == "makemigrations"]]; then
@@ -7,8 +7,8 @@ if [[ "$1" == "test" ]]; then
 # elif [[ "$1" == "migrate"]]; then
 #     docker-compose run app sh -c "python3 manage.py migrate $2"
 else
-    echo "docker-compose run --rm app sh -c '____ && flake8 '  : "
+    echo "docker-compose run --rm app sh -c '____ && flake8 --ignore=W391 '  : "
     read commandToRun
     
-    docker-compose run app sh -c "python3 manage.py $commandToRun && flake8"
+    docker-compose run app sh -c "python3 manage.py $commandToRun && flake8 --ignore=W391"
 fi
