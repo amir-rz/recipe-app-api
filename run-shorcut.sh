@@ -7,7 +7,7 @@ if [[ "$1" == "test" ]]; then
 # elif [[ "$1" == "migrate"]]; then
 #     docker-compose run app sh -c "python3 manage.py migrate $2"
 else
-    echo "docker-compose run app sh -c '____ && flake8 '  : "
+    echo "docker-compose run --rm app sh -c '____ && flake8 '  : "
     read commandToRun
     
     docker-compose run app sh -c "python3 manage.py $commandToRun && flake8"
