@@ -71,7 +71,7 @@ class PublicUserApiTests(TestCase):
             "email": "test@test.com",
             "password": "testpass"
         }
-        user = create_user(**payload)
+        create_user(**payload)
 
         res = self.client.post(TOKEN_URL, payload)
 
