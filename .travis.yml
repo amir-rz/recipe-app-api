@@ -3,6 +3,7 @@ python:
   - "3.6"
 
 services:
+  - postgresql
   - docker
 
 before_script: pip install docker-compose
