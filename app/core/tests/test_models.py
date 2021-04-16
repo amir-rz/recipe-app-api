@@ -42,6 +42,15 @@ class ModelTests(TestCase):
 
         self.assertEqual(str(tag), tag.name)
 
+    def test_ingredient_str(self):
+        """ Test the ingredient string representation """
+        ingredient = models.Ingredient.objects.create(
+            user=sample_user(),
+            name="Cucumber"
+        )
+
+        self.assertEqual(str(ingredient), ingredient.name)
+
     # commented tests
     def cmnt_test_new_user_invalid_email(self):
         """ Test creating new user with no email raises error """
